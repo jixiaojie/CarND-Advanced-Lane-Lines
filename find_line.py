@@ -213,7 +213,9 @@ def find_line(img):
     cv2.fillPoly(window_img, np.int_([line_pts]), (0,255, 0))
     cv2.fillPoly(window_img, np.int_([car_pos_pts]), (255,48, 48))
     
-    
+    #Calculate how far the car from center of lane
+    car_pos = window_img.shape[1] // 2 - middlex[middlex.shape[0] - 1]
+
     if debug:
         mpimg.imsave('output_images/window_img.jpg', window_img)
     
@@ -244,6 +246,11 @@ def find_line(img):
     result = cv2.putText(result,'right_radius:' + str(int(right_radius)),(text_start_pixel,90),font,1.2,(0,0,0),2)
     result = cv2.putText(result,'mean_fit_distance:' + str(int(np.mean(abs(left_fitx - right_fitx)))),(text_start_pixel,140),font,1.2,(0,0,0),2)
     result = cv2.putText(result,'diff_radius:' + str(int(abs(left_radius - right_radius))),(text_start_pixel,190),font,1.2,(0,0,0),2)
+    
+    if car_pos > 0:
+        result = cv2.putText(result,'Vehicle is ' + str(int(car_pos)) + ' px rt of center',(text_start_pixel,240),font,1.2,(0,0,0),2)
+    else:
+        result = cv2.putText(result,'Vehicle is ' + str(int(car_pos)) + ' px lt of center',(text_start_pixel,240),font,1.2,(0,0,0),2)
     
     if debug:
         mpimg.imsave('output_images/result02.jpg', result)
