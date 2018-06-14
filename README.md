@@ -125,3 +125,6 @@ I implemented this step in lines 213 in my code in `find_line.py` in the functio
 Here's a [link to my video result](./output_videos/project_video.mp4)
 ---
 
+### Discussion
+
+I don't know how to use Line() class to track the pipeline , anyone show me some advice is very grateful！
