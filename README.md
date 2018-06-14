@@ -45,8 +45,8 @@ I start by preparing "object points", which will be the (x, y, z) coordinates of
 I then used the output `objpoints` and `imgpoints` to compute the camera calibration and distortion coefficients using the `cv2.calibrateCamera()` function.  I applied this distortion correction to the test image using the `cv2.undistort()` function and obtained this result: 
 
 <div class="test">
-<img src="output_images/calibration_distort.jpg" width="200" />
-<img src="output_images/calibration_undistort.jpg" width="200" />
+<img src="output_images/calibration_distort.jpg" width="300" />
+<img src="output_images/calibration_undistort.jpg" width="300" />
 </div>
 
 ### Pipeline (single images)
@@ -56,7 +56,7 @@ I then used the output `objpoints` and `imgpoints` to compute the camera calibra
 To demonstrate this step, I will describe how I apply the distortion correction to one of the test images like this one:
 
 <div class="test">
-<img src="output_images/test5_distort.jpg" width="400" />
+<img src="output_images/test5_distort.jpg" width="600" />
 </div>
 
 #### 2. I used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
@@ -64,7 +64,7 @@ To demonstrate this step, I will describe how I apply the distortion correction 
 I used a combination of color and gradient thresholds to generate a binary image (thresholding steps at lines 36-41 in `find_line.py`).  Here's an example of my output for this step.
 
 <div class="test">
-<img src="output_images/gray.jpg" width="400" />
+<img src="output_images/gray.jpg" width="600" />
 </div>
 
 #### 3. Performed a perspective transform and provide an example of a transformed image.
@@ -88,8 +88,8 @@ This resulted in the following source and destination points:
 I verified that my perspective transform was working as expected by drawing the `src` and `dst` points onto a test image and its warped counterpart to verify that the lines appear parallel in the warped image.
 
 <div class="test">
-<img src="output_images/test5_undistort.jpg" width="200" />
-<img src="output_images/test5_perspective.jpg" width="200" />
+<img src="output_images/test5_undistort.jpg" width="300" />
+<img src="output_images/test5_perspective.jpg" width="300" />
 </div>
 
 
@@ -98,7 +98,7 @@ I verified that my perspective transform was working as expected by drawing the 
 Then I did some other stuff and fit my lane lines with a 2nd order polynomial kinda like this:
 
 <div class="test">
-<img src="output_images/out_img01.jpg" width="400" />
+<img src="output_images/out_img01.jpg" width="600" />
 </div>
 
 #### 5. Calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
@@ -110,7 +110,7 @@ I did this in lines 159-166 in my code in `find_line.py`
 I implemented this step in lines 213 in my code in `find_line.py` in the function `find_line()`.  Here is an example of my result on a test image:
 
 <div class="test">
-<img src="output_images/result02.jpg" width="400" />
+<img src="output_images/result02.jpg" width="600" />
 </div>
 
 ---
