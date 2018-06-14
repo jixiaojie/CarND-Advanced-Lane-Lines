@@ -1,3 +1,6 @@
+# **Advanced Lane Finding** 
+
+---
 
 **Advanced Lane Finding Project**
 
@@ -58,15 +61,15 @@ To demonstrate this step, I will describe how I apply the distortion correction 
 
 #### 2. I used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 
-I used a combination of color and gradient thresholds to generate a binary image (thresholding steps at lines # through # in `another_file.py`).  Here's an example of my output for this step.  (note: this is not actually from one of the test images)
+I used a combination of color and gradient thresholds to generate a binary image (thresholding steps at lines 36-41 in `find_line.py`).  Here's an example of my output for this step.
 
 <div class="test">
 <img src="output_images/gray.jpg" width="400" />
 </div>
 
-#### 3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
+#### 3. Performed a perspective transform and provide an example of a transformed image.
 
-The code for my perspective transform includes a function called `warper()`, which appears in lines 1 through 8 in the file `example.py` (output_images/examples/example.py) (or, for example, in the 3rd code cell of the IPython notebook).  The `warper()` function takes as inputs an image (`img`), as well as source (`src`) and destination (`dst`) points.  I chose the hardcode the source and destination points in the following manner:
+The code for my perspective transform includes a function called `get_perspective()`, which appears in lines 195 through 207 in the file `functions.py`.   The `get_perspective()` function takes as inputs an image (`img`), as well as source (`src`) and destination (`dst`) points.  I chose the hardcode the source and destination points in the following manner:
 
 ```python
 src = np.float32([(555, 480), (752, 480), (228, 700), (1072, 700)])
@@ -90,20 +93,21 @@ I verified that my perspective transform was working as expected by drawing the 
 </div>
 
 
-#### 4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
+#### 4. Identified lane-line pixels and fit their positions with a polynomial.
 
 Then I did some other stuff and fit my lane lines with a 2nd order polynomial kinda like this:
 
 <div class="test">
 <img src="output_images/out_img01.jpg" width="400" />
 </div>
-#### 5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
-I did this in lines # through # in my code in `my_other_file.py`
+#### 5. Calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
-#### 6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
+I did this in lines 159-166 in my code in `find_line.py`
 
-I implemented this step in lines # through # in my code in `yet_another_file.py` in the function `map_lane()`.  Here is an example of my result on a test image:
+#### 6. Provide an example image of my result plotted back down onto the road such that the lane area is identified clearly.
+
+I implemented this step in lines 213 in my code in `find_line.py` in the function `find_line()`.  Here is an example of my result on a test image:
 
 <div class="test">
 <img src="output_images/result02.jpg" width="400" />
@@ -113,8 +117,7 @@ I implemented this step in lines # through # in my code in `yet_another_file.py`
 
 ### Pipeline (video)
 
-#### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
-
+#### 1. My final video output. 
  
 Here's a [link to my video result](./output_videos/project_video.mp4)
 ---
