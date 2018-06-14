@@ -103,7 +103,10 @@ Then I did some other stuff and fit my lane lines with a 2nd order polynomial ki
 
 #### 5. Calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
-I did this in lines 159-166 in my code in `find_line.py`
+I did this in lines 159-166 in my code in `find_line.py`. Here is the formulas:
+<div class="test">
+<img src="output_images/radius_formulas.png" width="600" />
+</div>
 
 #### 6. Provide an example image of my result plotted back down onto the road such that the lane area is identified clearly.
 
@@ -122,3 +125,6 @@ I implemented this step in lines 213 in my code in `find_line.py` in the functio
 Here's a [link to my video result](./output_videos/project_video.mp4)
 ---
 
+### Discussion
+
+I don't know how to use the Line() class to track the pipeline , Anyone show me some advice is very grateful！
